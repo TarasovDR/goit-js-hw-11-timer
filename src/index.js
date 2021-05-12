@@ -54,8 +54,7 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
   selector: '#timer-1',
-  // targetDate: new Date('Aug 31, 2021'),
-  targetDate: new Date('May 12, 2021 10:09:20'),
+  targetDate: new Date('Aug 31, 2021'),
   onTick: updateClockFace,
 });
 
@@ -69,13 +68,4 @@ function updateClockFace({
   refs.hours.textContent = `${hours}`;
   refs.mins.textContent = `${mins}`;
   refs.secs.textContent = `${secs}`;
-}
-
-if (CountdownTimer.targetDate < Date.now()) {
-  console.log(CountdownTimer.targetDate);
-  console.log(Date.now());
-  timer.init(0);
-  timer.stopTimer(0);
-} else {
-  timer.startTimer();
 }
